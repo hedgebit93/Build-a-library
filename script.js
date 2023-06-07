@@ -63,6 +63,20 @@ class Movie extends Media {
   }
 }
 
+class CD extends Media {
+  constructor(artist, title, songs) {
+    super(title)
+    this._artist = artist;
+    this._songs = [];
+  }
+
+  get artist() {
+    return this._artist;
+  }
+  get songs() {
+    return this._songs;
+  }
+}
 const historyOfEverything = new Book('Bill Bryson', 'A Short History of Nearly Everything', 544);
 historyOfEverything.toggleCheckOutStatus();
 console.log(historyOfEverything.isCheckedOut);
@@ -80,3 +94,12 @@ speed.addRating(1);
 speed.addRating(5);
 console.log(speed.getAverageRating());
 console.log(speed);
+
+const fixYourself = new CD('The Wombats', 'Fix Yourself Not The World', ['Flip Me Upside Down', 'This Car Drives All By Itself', 'If You Ever Leave, Im Coming With You']);
+fixYourself.toggleCheckOutStatus();
+console.log(fixYourself.isCheckedOut);
+fixYourself.addRating(4);
+fixYourself.addRating(5);
+fixYourself.addRating(5);
+console.log(fixYourself.getAverageRating())
+console.log(fixYourself);
